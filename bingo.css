@@ -1,0 +1,24 @@
+body, html{
+    background-color: #5294ce;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tabela{
+    background-color: aliceblue;
+    border: 5px double #064ea0;
+    border-radius: 5%;
+    font-size: 50px;
+    padding: 5px 8px;
+}
+td{
+    border: 2px solid #004ba0;
+    border-radius: 5%;
+    text-align: center;
+    padding: 5px 8px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cartela de bingo</title>
+    <link href="bingo.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="tabela">
+        <thead>
+                <tr>
+                    <th>B</th>
+                    <th>I</th>
+                    <th>N</th>
+                    <th>G</th>
+                    <th>O</th>
+                </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <td id="b1" onclick="MarcarCartela(this)">12</td>
+                    <td id="i1" onclick="MarcarCartela(this)">30</td>
+                    <td id="n1" onclick="MarcarCartela(this)">33</td>
+                    <td id="g1" onclick="MarcarCartela(this)">51</td>
+                    <td id="o1" onclick="MarcarCartela(this)">69</td>
+                </tr>
+                <tr>
+                    <td id="b2" onclick="MarcarCartela(this)">9</td>
+                    <td id="i2" onclick="MarcarCartela(this)">24</td>
+                    <td id="n2" onclick="MarcarCartela(this)">45</td>
+                    <td id="g2" onclick="MarcarCartela(this)">59</td>
+                    <td id="o2" onclick="MarcarCartela(this)">75</td>
+                </tr>
+                <tr>
+                    <td id="b3" onclick="MarcarCartela(this)">13</td>
+                    <td id="i3" onclick="MarcarCartela(this)">22</td>
+                    <td id="n3" onclick="MarcarCartela(this)">31</td>
+                    <td id="g3" onclick="MarcarCartela(this)">47</td>
+                    <td id="o3" onclick="MarcarCartela(this)">64</td>
+                </tr>
+                <tr>
+                    <td id="b4" onclick="MarcarCartela(this)">1</td>
+                    <td id="i4" onclick="MarcarCartela(this)">16</td>
+                    <td id="n4" onclick="MarcarCartela(this)">34</td>
+                    <td id="g4" onclick="MarcarCartela(this)">49</td>
+                    <td id="o4" onclick="MarcarCartela(this)">71</td>
+                </tr>
+                <tr>
+                    <td id="b5" onclick="MarcarCartela(this)">5</td>
+                    <td id="i5" onclick="MarcarCartela(this)">19</td>
+                    <td id="n5" onclick="MarcarCartela(this)">32</td>
+                    <td id="g5" onclick="MarcarCartela(this)">52</td>
+                    <td id="o5" onclick="MarcarCartela(this)">70</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    <button id="botao" onclick="Piscar()">
+    Piscando o Botão
+    </button>
+
+    <script>
+        function Piscar()
+        {
+            var botao = document.getElementById("botao");
+            if(botao.style.backgroundColor == 'blue')
+        {
+            botao.style.backgroundColor = 'white';
+        }else{
+            botao.style.backgroundColor = 'blue';
+        }
+        }
+        function MarcarCartela(td)
+        {
+            if(td.style.backgroundColor!='black')
+            {
+                td.style.backgroundColor = 'black';
+                td.style.color = 'white';
+            }else{
+                td.style.backgroundColor = 'white';
+                td.style.color = 'black';
+            }
+        }
+    </script>
+
+
+
+
+</body>
+</html>
