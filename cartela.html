@@ -62,6 +62,52 @@
     </button>
 
     <script>
+
+         function GerarCartela()
+        {
+            vetorB = GerarVetor(1,15)
+            console.log(vetorB)
+
+            vetorI= GerarVetor(16,30)
+            console.log(vetorI)
+
+            vetorN= GerarVetor(31,45)
+            console.log(vetorN)
+
+            vetorG= GerarVetor(46,60)
+            console.log(vetorG)
+
+            vetorO= GerarVetor(61,75)
+            console.log(vetorO)
+
+            for(var i = 0; i<5; i++)
+            {
+            var td = document.getElementById("B"+(i+1) )
+            td.innerText =   vetorB[i]
+            
+            td = document.getElementById("I"+(i+1) )
+            td.innerText =   vetorI[i]
+
+            td = document.getElementById("N"+(i+1) )
+            td.innerText =   vetorN[i]
+
+            td = document.getElementById("G"+(i+1) )
+            td.innerText =   vetorG[i]
+
+            td = document.getElementById("O"+(i+1) )
+            td.innerText =   vetorO[i]
+            }
+        }
+         function GerarVetor (numeroinicial,numerofinal)
+        {
+            vetor   = []
+            for (var i = numeroinicial; i<= numerofinal; i++){
+                
+                vetor.push(i)
+
+            }
+            return vetor
+            
         function Piscar()
         {
             var botao = document.getElementById("botao");
