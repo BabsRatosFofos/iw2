@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTELA DE BINGO</title>
+    <link href="bingo.css" rel="stylesheet"./>
+</head>
+<body>
+    <table class="tabela">
+        <thead>
+            <tbody>
+            <tr>
+                <th>B</th>
+                <th>I</th>
+                <th>N</th>
+                <th>G</th>
+                <th>O</th>
+            </tr>
+ 
+ 
+            <tr>
+                <td id="b1" onclick="MarcarCartela(this)" >12</td>
+                <td id="i1" onclick="MarcarCartela(this)" >30</td>
+                <td id="n1" onclick="MarcarCartela(this)" >33</td>
+                <td id="g1" onclick="MarcarCartela(this)" >51</td>
+                <td id="o1" onclick="MarcarCartela(this)" >69</td>
+            </tr>
+            <tr>
+                <td id="b2" onclick="MarcarCartela(this)" >9</td>
+                <td id="i2" onclick="MarcarCartela(this)" >24</td>
+                <td id="n2" onclick="MarcarCartela(this)" >45</td>
+                <td id="g2" onclick="MarcarCartela(this)" >59</td>
+                <td id="o2" onclick="MarcarCartela(this)" >75</td>
+            </tr>
+            <tr>
+                <td id="b3" onclick="MarcarCartela(this)" >13</td>
+                <td id="i3" onclick="MarcarCartela(this)" >22</td>
+                <td id="n3" onclick="MarcarCartela(this)" >31</td>
+                <td id="g3" onclick="MarcarCartela(this)" >47</td>
+                <td id="o3" onclick="MarcarCartela(this)" >64</td>
+            </tr>
+            <tr>
+                <td id="b4" onclick="MarcarCartela(this)" >1</td>
+                <td id="i4" onclick="MarcarCartela(this)" >16</td>
+                <td id="n4" onclick="MarcarCartela(this)" >34</td>
+                <td id="g4" onclick="MarcarCartela(this)" >49</td>
+                <td id="o4" onclick="MarcarCartela(this)" >71</td>
+            </tr>
+            <tr>
+                <td id="b5" onclick="MarcarCartela(this)" >5</td>
+                <td id="i5" onclick="MarcarCartela(this)" >19</td>
+                <td id="n5" onclick="MarcarCartela(this)" >32</td>
+                <td id="g5" onclick="MarcarCartela(this)" >52</td>
+                <td id="o5" onclick="MarcarCartela(this)" >70</td>
+            </tr>
+        </thead>
+             </tbody>
+    </table>
+ 
+    <br />
+ 
+    <button id="botao" onclick="Piscar()" >
+        Piscando o botão
+    </button>
+ 
+    <button onclick="GerarCartela()">
+        Gerar Cartela
+    </button>
+ 
+    <script>
+        function GerarCartela(){
+            vetorB = MisturarArray(GerarVetor(1,15))
+            vetorI = MisturarArray(GerarVetor(16,30))
+            vetorN = MisturarArray(GerarVetor(31,45))
+            vetorG = MisturarArray(GerarVetor(46,60))
+            vetorO = MisturarArray(GerarVetor(61,75))
+        for (var i = 0; i <5; i++)
+        {
+        var td = document.getElementById("b"+(i+1))
+        td.innerText = vetorB[i]
+ 
+        var td = document.getElementById("i"+(i+1))
+        td.innerText = vetorI[i]
+ 
+        var td = document.getElementById("n"+(i+1))
+        td.innerText = vetorN[i]
+ 
+        var td = document.getElementById("g"+(i+1))
+        td.innerText = vetorG[i]
+ 
+        var td = document.getElementById("o"+(i+1))
+        td.innerText = vetorO[i]
+        }
+ 
+        }
+ 
+        function GerarVetor(NumeroInicial, NumeroFinal){
+            vetor = []
+            for (i = NumeroInicial; i <= NumeroFinal; i++){
+                vetor.push(i)
+            }
+            return vetor
+        }
+        function Piscar()
+        {
+            var botao = document.getElementById("botao");
+            if(botao.style.backgroundColor == 'white')
+        {
+            botao.style.backgroundColor = 'grey';
+        } else{
+            botao.style.backgroundColor = 'white';
+        }
+        }
+        function MarcarCartela(td)
+        {
+            if(td.style.backgroundColor != 'black')
+            {
+            td.style.backgroundColor = "black";
+            td.style.color = "white";
+            }
+            else
+            {
+            td.style.backgroundColor = "grey";
+            td.style.color = "";
+            }
+        }
+        function NumeroAleatorio(NumeroMinimo, NumeroMaximo) {
+            var retorno = Math.floor(Math.random() * NumeroMaximo)
+            if (retorno > 0 && retorno >= NumeroMinimo && retorno <= NumeroMaximo)
+        {
+            return retorno
+        }
+        else
+        {
+            return NumeroAleatorio(NumeroMinimo, NumeroMaximo)
+        }
+        }
+ 
+        function MisturarArray(array)
+        {
+            var aleatorio
+            var cont = array.length
+            var auxiliar
+            while (cont != 0)
+            {
+                aleatorio = NumeroAleatorio(1, array.length)
+                cont--
+                auxiliar = array[cont]
+                array[cont] = array[aleatorio]
+                array[aleatorio] = auxiliar
+            }
+            return array
+        }
+    </script>
+</body>
+</html>/
+ 
