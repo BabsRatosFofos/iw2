@@ -1,5 +1,5 @@
 body, html{
-    background-color: #5294ce;
+    background-color: #3766ff;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -11,7 +11,7 @@ body, html{
 
 .tabela{
     background-color: aliceblue;
-    border: 5px double #064ea0;
+    border: 5px double #001350;
     border-radius: 5%;
     font-size: 50px;
     padding: 5px 8px;
@@ -21,4 +21,12 @@ td{
     border-radius: 5%;
     text-align: center;
     padding: 5px 8px;
+}
+button{
+    display: block;
+    margin-top: 10px;
+}
+.img {
+    width: 30px;
+    height: 30px;
 }
