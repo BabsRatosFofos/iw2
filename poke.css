@@ -1,0 +1,22 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #8cfbff;
+    text-align: center;
+    background: linear-gradient(to bottom, #d9feff, #035c5f)
+}
+
+div {
+    border: 1px solid rgb(255, 255, 255);
+    display: inline-block;
+    margin-top: 2%;
+}
+main{
+    display: inline-block;
+    margin-top: 2%;
+    padding: 15px;
+}
+.pokedex {
+    width: 100%
+}
